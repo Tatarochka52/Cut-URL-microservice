@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="" rel="shortcut icon" type="image/x-icon"> -->
+    <title>CutURL</title>
+  </head>
+  <body>
+    <h1>Я помогу сократить твою ссылку</h1>
+    <form action="./cutYourURL.html" method="post">
+      <p><input type="text" name="input" size="40" placeholder="Введите Вашу ссылку"></p>
+      <button>Сократить</button>
+    </form>
+    <p>Сокращенная ссылка</p>
+    <p><input type="url" value="http://localhost:8080/{{.OutputLink}}"></p>
+
+  </body>
+</html>
