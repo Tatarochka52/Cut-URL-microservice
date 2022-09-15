@@ -64,6 +64,15 @@ func getLinkFromPostgres(stringURL string) string{
 }
 
 
+func openLinkFromPostgres(stringURL string) string{
+  var res string
+
+  row := db.QueryRow(`SELECT "Input URL" FROM "Cut URL" WHERE "Output URL" = $1`, stringURL)
+  row.Scan(&res)
+  return res
+}
+
+
 func closeDb(){
   defer db.Close()
 }

@@ -68,6 +68,23 @@ func dataIsInFile(stringURL string) string{
 }
 
 
+func openLinkFromFile(stringURL string) string{
+  var resultLine string
+
+  fileScanner := bufio.NewScanner(file)
+  fileScanner.Split(bufio.ScanLines)
+
+  for fileScanner.Scan(){
+    if fileScanner.Text() == stringURL{
+      return resultLine
+    }else{
+      resultLine = fileScanner.Text()
+    }
+  }
+  return ""
+}
+
+
 func closeFile(){
   defer file.Close()
 }
