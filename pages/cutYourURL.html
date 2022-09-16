@@ -3,18 +3,66 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <!-- <link href="" rel="shortcut icon" type="image/x-icon"> -->
     <title>CutURL</title>
+
+    <style>
+    body{
+      background-color: #ffd466;
+    }
+
+    .btn {
+      background-color: #ddd;
+      border: none;
+      color: black;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 24px;
+      margin: 4px 2px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ffbd17;
+      color: white;
+    }
+
+    input[type=text] {
+    width: 200px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    }
+
+    input[type=text]:focus {
+        width: 100%;
+    }
+
+    h1{
+      margin: 60px 10px 20px 10px
+    }
+    </style>
+
   </head>
   <body>
-    <h1>Я помогу сократить твою ссылку</h1>
+    <center style="background-color: #ffbd17"><div class="col-xl-8">
+      <h1 class="display-3 font-weight-light text-center">Я ПОМОГУ СОКРАТИТЬ ТВОЮ ССЫЛКУ</h1>
+    </div></center>
     <form action="./cutYourURL.html" method="post">
-      <p><input type="text" name="input" size="40" placeholder="Введите Вашу ссылку"></p>
-      <button>Сократить</button>
+      <center><div class="col-xl-6">
+        <p><input type="text" class="form-control" autocomplete="off" name="input" size="40" placeholder="Введите Вашу ссылку..."></p>
+      </div></center>
+      <center><div class="col-xl-2">
+        <button type="submit" class="btn btn-lg btn-block">СОКРАТИТЬ</button>
+      </div></center>
     </form>
-    <p>Сокращенная ссылка</p>
-    <p><input type="url" value="http://localhost:8080/{{.OutputLink}}"></p>
+
+    <center style="background-color: #ffbd17; margin: 80px 0px 20px 0px"><div class="col-xl-6">
+      <p class="display-4 font-weight-light text-center">СОКРАЩЕННАЯ ССЫЛКА</p>
+    </div></center>
+    <center><div class="col-xl-2">
+      <p><input type="url" autocomplete="off" class="form-control" value="http://localhost:8080/{{.OutputLink}}"></p>
+    </div></center>
 
   </body>
 </html>
